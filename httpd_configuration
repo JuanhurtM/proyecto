@@ -1,0 +1,20 @@
+1. Instal WSGI Module
+
+yum install mod_wsgi
+
+
+2. Add this to httpd.conf
+
+
+
+WSGIScriptAlias / /var/www/my-project/application.wsgi
+
+<VirtualHost *>
+    ServerName www.servicios.com
+    <Directory /var/www/my-project/>
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+
